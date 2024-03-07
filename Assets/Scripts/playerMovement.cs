@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour {
             } else
                 body.gravityScale = 7;
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.LeftCommand))
                 Jump();
         } else
             wallJumpCooldown += Time.deltaTime;
