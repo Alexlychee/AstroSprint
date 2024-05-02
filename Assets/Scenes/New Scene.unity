@@ -326,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643391885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.43, z: 0}
+  m_LocalPosition: {x: -0.2, y: -5.48, z: 0}
   m_LocalScale: {x: 1000, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -468,8 +468,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531978392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.31, y: 0.96, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalPosition: {x: 6.47, y: -1.73, z: 0}
+  m_LocalScale: {x: 6.4744997, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 1859867497}
   - component: {fileID: 1859867501}
   - component: {fileID: 1859867502}
+  - component: {fileID: 1859867503}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -603,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859867496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.017, y: -2.159, z: 0}
+  m_LocalPosition: {x: -0.73, y: -3.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -625,12 +626,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 20
   jumpForce: 40
+  jumpBufferFrames: 8
+  coyoteTime: 0.1
+  maxAirJumps: 1
   groundCheckPoint: {fileID: 1183748982}
   groundCheckY: 0.2
   groundCheckX: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  dashSpeed: 70
+  dashTime: 0.2
+  dashCooldown: 0.35
+  dashEffect: {fileID: 4724394002156970050, guid: 5c0a5759f20c243929f838d5e098394a, type: 3}
 --- !u!95 &1859867502
 Animator:
   serializedVersion: 5
@@ -652,3 +660,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1859867503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859867496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ed2adba7c4a4b23b6098eb60ab75c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumping: 0
+  dashing: 0
