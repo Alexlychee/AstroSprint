@@ -109,9 +109,8 @@ public class playerController : MonoBehaviour
     {
         GetInputs();
         UpdateJumpVariables();
-
-        if (pState.dashing) return;
         RestoreTimeScale();
+        if (pState.dashing) return;
         FlashWhileInvincible();
         Move();
         Heal();
@@ -329,6 +328,8 @@ public class playerController : MonoBehaviour
     void Heal() {
         if (Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing) {
             pState.healing = true;
+            anim.SetBool("Healing", true);
+
             // Healing
             healTimer += Time.deltaTime;
             if (healTimer >= timeToHeal) {
@@ -337,6 +338,7 @@ public class playerController : MonoBehaviour
             }
         } else {
             pState.healing = false;
+            anim.SetBool("Healing", false);
             healTimer = 0;
         }
     }
