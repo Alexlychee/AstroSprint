@@ -1153,6 +1153,7 @@ MonoBehaviour:
   maxHealth: 10
   bloodSpurt: {fileID: 3986396616286462388, guid: e7041d67e0f094f0b8b78bfff908db55, type: 3}
   hitFlashSpeed: 10
+  timeToHeal: 1
   pState: {fileID: 0}
 --- !u!95 &1859867502
 Animator:
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   recoilingY: 0
   lookingRight: 1
   invincible: 0
+  healing: 0
 --- !u!1 &1864802087
 GameObject:
   m_ObjectHideFlags: 0

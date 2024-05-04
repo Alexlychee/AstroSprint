@@ -61,9 +61,10 @@ public class playerController : MonoBehaviour
     public int maxHealth;
     [SerializeField] GameObject bloodSpurt;
     [SerializeField] float hitFlashSpeed;
-
     public delegate void OnHealthChangedDelegate();
     [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
+    float healTimer;
+    [SerializeField] float timeToHeal;
     [Space(5)]
 
     [HideInInspector]public PlayerStateList pState; 
@@ -110,13 +111,15 @@ public class playerController : MonoBehaviour
         UpdateJumpVariables();
 
         if (pState.dashing) return;
-        Flip();
+        RestoreTimeScale();
+        FlashWhileInvincible();
         Move();
+        Heal();
+        if (pState.healing) return;
+        Flip();
         Jump();
         StartDash();
         Attack();
-        RestoreTimeScale();
-        FlashWhileInvincible();
     }
 
     private void FixedUpdate() {
@@ -321,6 +324,21 @@ public class playerController : MonoBehaviour
             }
         }
 
+    }
+
+    void Heal() {
+        if (Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing) {
+            pState.healing = true;
+            // Healing
+            healTimer += Time.deltaTime;
+            if (healTimer >= timeToHeal) {
+                Health++;
+                healTimer = 0;
+            }
+        } else {
+            pState.healing = false;
+            healTimer = 0;
+        }
     }
 
     public bool Grounded() {
