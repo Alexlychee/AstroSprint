@@ -67,13 +67,17 @@ public class playerController : MonoBehaviour
     [SerializeField] float timeToHeal;
     [Space(5)]
 
+    [Header("Mana Settings")]
+    [SerializeField] float mana;
+    [SerializeField] float manaDrainSpeed;
+    [SerializeField] float manaGain;
+    [Space(5)]
+
     [HideInInspector]public PlayerStateList pState; 
     private Rigidbody2D rb;
     Animator anim;
     private SpriteRenderer sr;
-
     private float xAxis, yAxis;
-
     public static playerController Instance;
 
     private void Awake() {
@@ -94,6 +98,7 @@ public class playerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
+        Mana = mana;
     }
 
     private void OnDrawGizmos() {
@@ -202,6 +207,10 @@ public class playerController : MonoBehaviour
             if (objectsToHit[i].GetComponent<Enemy>() != null) {
                 objectsToHit[i].GetComponent<Enemy>().EnemyHit
                     (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+
+                if (objectsToHit[i].CompareTag("Enemy")) {
+                    Mana += manaGain;
+                }
             }
         }
     }
@@ -326,7 +335,7 @@ public class playerController : MonoBehaviour
     }
 
     void Heal() {
-        if (Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing) {
+        if (Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing) {
             pState.healing = true;
             anim.SetBool("Healing", true);
 
@@ -336,10 +345,22 @@ public class playerController : MonoBehaviour
                 Health++;
                 healTimer = 0;
             }
+
+            // Drain mana
+            Mana -= Time.deltaTime * manaDrainSpeed;
         } else {
             pState.healing = false;
             anim.SetBool("Healing", false);
             healTimer = 0;
+        }
+    }
+
+    float Mana {
+        get { return mana; }
+        set {
+            if(mana != value) {
+                mana = Mathf.Clamp(value, 0, 1);
+            }
         }
     }
 
