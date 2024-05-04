@@ -75,6 +75,20 @@ public class playerController : MonoBehaviour
     [SerializeField] float manaGain;
     [Space(5)]
 
+    [Header("Spell Settings")]
+    // Spell Stats
+    [SerializeField] float manaSpellCost = 0.3f;
+    [SerializeField] float timeBetweenCast = 0.5f;
+    float timeSinceCast;
+    [SerializeField] float spellDamage; // Up Spell Explosion and Down Spell Fireball
+    [SerializeField] float downSpellForce; // Dive Spell
+
+    // Spell Cast Objects
+    [SerializeField] GameObject sideSpellFireball;
+    [SerializeField] GameObject upSpellExplosion;
+    [SerializeField] GameObject downSpellFireball;
+    [Space(5)]
+
     [HideInInspector]public PlayerStateList pState; 
     private Rigidbody2D rb;
     Animator anim;
@@ -127,6 +141,15 @@ public class playerController : MonoBehaviour
         Jump();
         StartDash();
         Attack();
+        CastSpell();
+    }
+
+    private void OnTriggerEnter2D(Collider2D _other) // For up and down cast spell
+    {
+        if(_other.GetComponent<Enemy>() != null && pState.casting)
+        {
+            _other.GetComponent<Enemy>().EnemyHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
+        }
     }
 
     private void FixedUpdate() {
@@ -366,6 +389,67 @@ public class playerController : MonoBehaviour
                 manaStorage.fillAmount = Mana;
             }
         }
+    }
+
+    void CastSpell() {
+        if(Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost) {
+            pState.casting = true;
+            timeSinceCast = 0;
+            StartCoroutine(CastCoroutine());
+        } else {
+            timeSinceCast += Time.deltaTime;
+        }
+
+         if(Grounded())
+        {
+            // Disable down spell if on the ground
+            downSpellFireball.SetActive(false);
+        }
+        // If down spell is active, force player down until grounded
+        if(downSpellFireball.activeInHierarchy)
+        {
+            rb.velocity += downSpellForce * Vector2.down;
+        }
+    }
+
+    IEnumerator CastCoroutine() {
+        anim.SetBool("Casting", true);
+        yield return new WaitForSeconds(0.15f);
+
+        // Side Spell Cast
+       if (yAxis == 0 || (yAxis < 0 && Grounded()))
+        {
+            GameObject _fireBall = Instantiate(sideSpellFireball, SideAttackTransform.position, Quaternion.identity);
+
+            // Flip Fireball
+            if(pState.lookingRight)
+            {
+                _fireBall.transform.eulerAngles = Vector3.zero; // if facing right, fireball continues as per normal
+            }
+            else
+            {
+                _fireBall.transform.eulerAngles = new Vector2(_fireBall.transform.eulerAngles.x, 180); 
+                // if not facing right, rotate the fireball 180 deg
+            }
+            pState.recoilingX = true;
+        }
+        // Up Spell Cast
+        else if( yAxis > 0)
+        {
+            Instantiate(upSpellExplosion, transform);
+            rb.velocity = Vector2.zero;
+        }
+
+        // Down  Spell Cast
+        else if(yAxis < 0 && !Grounded())
+        {
+            downSpellFireball.SetActive(true);
+        }
+
+        Mana -= manaSpellCost;
+        yield return new WaitForSeconds(0.35f);
+        anim.SetBool("Casting", false);
+        pState.casting = false;
     }
 
     public bool Grounded() {
