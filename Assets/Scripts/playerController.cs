@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class playerController : MonoBehaviour
     [Space(5)]
 
     [Header("Mana Settings")]
+    [SerializeField] Image manaStorage;
     [SerializeField] float mana;
     [SerializeField] float manaDrainSpeed;
     [SerializeField] float manaGain;
@@ -99,6 +101,7 @@ public class playerController : MonoBehaviour
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
         Mana = mana;
+        manaStorage.fillAmount = Mana;
     }
 
     private void OnDrawGizmos() {
@@ -360,6 +363,7 @@ public class playerController : MonoBehaviour
         set {
             if(mana != value) {
                 mana = Mathf.Clamp(value, 0, 1);
+                manaStorage.fillAmount = Mana;
             }
         }
     }
