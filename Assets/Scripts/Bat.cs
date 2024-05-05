@@ -71,6 +71,8 @@ public class Bat : Enemy
         anim.SetBool("Stunned", GetCurrentEnemyState == EnemyStates.Bat_Stunned);
         if(GetCurrentEnemyState == EnemyStates.Bat_Death) {
             anim.SetTrigger("Death");
+            int LayerIgnoreRaycast = LayerMask.NameToLayer("Ignore Player");
+            gameObject.layer = LayerIgnoreRaycast;
         }
     }
 

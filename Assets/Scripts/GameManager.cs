@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public string transitionedFromScene;
+    public Vector2 platformRespawnPoint;
 
     public static GameManager Instance { get; private set; }
 
