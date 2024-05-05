@@ -386,7 +386,7 @@ public class playerController : MonoBehaviour
     }
 
     void Heal() {
-        if (Input.GetButtonDown("Cast/Heal") && castOrHealtimer > 0.05f && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing) {
+        if (Input.GetButton("Cast/Heal") && castOrHealtimer > 0.05f && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing) {
             pState.healing = true;
             anim.SetBool("Healing", true);
 
