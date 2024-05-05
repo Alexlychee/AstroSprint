@@ -132,6 +132,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(pState.cutscene) return;
         GetInputs();
         UpdateJumpVariables();
         RestoreTimeScale();
@@ -156,6 +157,7 @@ public class playerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        if(pState.cutscene) return;
         if (pState.dashing) return;
         Recoil();
     }
@@ -167,7 +169,7 @@ public class playerController : MonoBehaviour
 
         if (Input.GetButton("Cast/Heal")) {
             castOrHealtimer += Time.deltaTime;
-        }
+        } 
     }
 
     void Flip() {
@@ -210,6 +212,21 @@ public class playerController : MonoBehaviour
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public IEnumerator WalkIntoNewScene(Vector2 _exitDir, float _delay) {
+        // IF exit is upwards
+        if(_exitDir.y > 0) {
+            rb.velocity = jumpForce * _exitDir;
+        }
+        
+        // IF exit direction required horizontal movement
+        if(_exitDir.x != 0) {
+            xAxis = _exitDir.x > 0 ? 1 : -1;
+            Move();
+        }
+        yield return new WaitForSeconds(_delay);
+        pState.cutscene = false;
     }
 
     void Attack() {
@@ -369,7 +386,7 @@ public class playerController : MonoBehaviour
     }
 
     void Heal() {
-        if (Input.GetButton("Cast/Heal") && castOrHealtimer > 0.05f && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing) {
+        if (Input.GetButtonDown("Cast/Heal") && castOrHealtimer > 0.05f && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing) {
             pState.healing = true;
             anim.SetBool("Healing", true);
 
@@ -411,7 +428,7 @@ public class playerController : MonoBehaviour
         if(!Input.GetButton("Cast/Heal")) {
             castOrHealtimer = 0;
         }
-        
+
         if(Grounded())
         {
             // Disable down spell if on the ground
