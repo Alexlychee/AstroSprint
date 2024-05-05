@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d226160dcdf658468900a1761a4e048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTime: 0
 --- !u!1 &7340030125768299580
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed0c43cee9fadb4a89e6ba3e6948883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFader: {fileID: 0}
 --- !u!1 &7340030125890546466
 GameObject:
   m_ObjectHideFlags: 0
