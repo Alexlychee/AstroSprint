@@ -453,7 +453,7 @@ public class playerController : MonoBehaviour
         GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, transform.position, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("Death");
-        yield return new WaitForSeconds(0.9f); 
+        yield return new WaitForSeconds(0.8f); 
         StartCoroutine(UIManager.Instance.ActivateDeathScreen());
     }
 

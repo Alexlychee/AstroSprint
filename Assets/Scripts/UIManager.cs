@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         StartCoroutine(sceneFader.Fade(SceneFader.FadeDirection.In));
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.9f);
         deathScreen.SetActive(true);
     }
 
