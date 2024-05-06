@@ -20,6 +20,14 @@ public class Charger : Enemy
         rb.gravityScale = 12f;
     }
 
+    private void OnCollisionEnter2D(Collision2D _collision)
+    {
+        if (_collision.gameObject.CompareTag("Enemy"))
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
+    }
+
     protected override void UpdateEnemyStates()
     {
         if(health <= 0) {

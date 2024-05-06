@@ -17,6 +17,14 @@ public class Crawler : Enemy
         rb.gravityScale = 12f;
     }
 
+    private void OnCollisionEnter2D(Collision2D _collision)
+    {
+        if(_collision.gameObject.CompareTag("Enemy"))
+        {
+            ChangeState(EnemyStates.Crawler_Flip);
+        }
+    }
+
     protected override void UpdateEnemyStates()
     {
         if(health <= 0) {
