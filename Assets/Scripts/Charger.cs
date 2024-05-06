@@ -56,7 +56,6 @@ public class Charger : Enemy
 
                 RaycastHit2D _hit = Physics2D.Raycast(transform.position + _ledgeCheckStart, _wallCheckDir, ledgeCheckX * 10);
                 if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Player")) {
-                    print("Found Player");
                     ChangeState(EnemyStates.Charger_Surprised);
                 }
 

@@ -121,7 +121,10 @@ public class playerController : MonoBehaviour
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = Mana;
-
+        // if (Health == 0) {
+        //     pState.alive = false;
+        //     GameManager.Instance.RespawnPlayer();
+        // }
         Health = maxHealth;
     }
 
@@ -451,6 +454,19 @@ public class playerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.9f); 
         StartCoroutine(UIManager.Instance.ActivateDeathScreen());
+    }
+
+    public void Respawned()
+    {
+        if(!pState.alive)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            GetComponent<BoxCollider2D>().enabled = true;
+            pState.alive = true;
+            Health = maxHealth;
+            anim.Play("player_Idle");
+        }
     }
 
     public int Health
