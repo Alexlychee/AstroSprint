@@ -146,18 +146,19 @@ public class playerController : MonoBehaviour
         }
         UpdateJumpVariables();
         RestoreTimeScale();
+
         if (pState.dashing) return;
         FlashWhileInvincible();
         if (pState.alive) {
             Move();
             Heal();
             CastSpell();
-        }
-        if (pState.healing) return;
             Flip();
             Jump();
             StartDash();
             Attack();
+        }
+        if (pState.healing) return;
     }
 
     private void OnTriggerEnter2D(Collider2D _other) // For up and down cast spell
@@ -381,12 +382,14 @@ public class playerController : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        Health -= Mathf.RoundToInt(_damage);
-        if(Health <= 0) {
-            Health = 0;
-            StartCoroutine(Death());
-        } else {
-            StartCoroutine(StopTakingDamage());
+        if(pState.alive) {
+            Health -= Mathf.RoundToInt(_damage);
+            if(Health <= 0) {
+                Health = 0;
+                StartCoroutine(Death());
+            } else {
+                StartCoroutine(StopTakingDamage());
+            }
         }
     }
 
@@ -450,8 +453,6 @@ public class playerController : MonoBehaviour
         GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, transform.position, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("Death");
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-
         yield return new WaitForSeconds(0.9f); 
         StartCoroutine(UIManager.Instance.ActivateDeathScreen());
     }
