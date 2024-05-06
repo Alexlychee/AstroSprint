@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -137,19 +138,23 @@ public class playerController : MonoBehaviour
     void Update()
     {
         if (pState.cutscene) return;
-        GetInputs();
+        if (pState.alive) {
+            GetInputs();
+        }
         UpdateJumpVariables();
         RestoreTimeScale();
         if (pState.dashing) return;
         FlashWhileInvincible();
-        Move();
-        Heal();
+        if (pState.alive) {
+            Move();
+            Heal();
+            CastSpell();
+        }
         if (pState.healing) return;
-        Flip();
-        Jump();
-        StartDash();
-        Attack();
-        CastSpell();
+            Flip();
+            Jump();
+            StartDash();
+            Attack();
     }
 
     private void OnTriggerEnter2D(Collider2D _other) // For up and down cast spell
@@ -374,7 +379,12 @@ public class playerController : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         Health -= Mathf.RoundToInt(_damage);
-        StartCoroutine(StopTakingDamage());
+        if(Health <= 0) {
+            Health = 0;
+            StartCoroutine(Death());
+        } else {
+            StartCoroutine(StopTakingDamage());
+        }
     }
 
     IEnumerator StopTakingDamage()
@@ -429,6 +439,18 @@ public class playerController : MonoBehaviour
     {
         restoreTime = true;
         yield return new WaitForSeconds(_delay);
+    }
+
+    IEnumerator Death() {
+        pState.alive = false;
+        Time.timeScale = 1f;
+        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, transform.position, Quaternion.identity);
+        Destroy(_bloodSpurtParticles, 1.5f);
+        anim.SetTrigger("Death");
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        yield return new WaitForSeconds(0.9f); 
+        StartCoroutine(UIManager.Instance.ActivateDeathScreen());
     }
 
     public int Health

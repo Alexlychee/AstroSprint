@@ -89,7 +89,9 @@ public class Enemy : MonoBehaviour
     protected void OnCollisionStay2D(Collision2D _other) {
         if(_other.gameObject.CompareTag("Player") && !playerController.Instance.pState.invincible && health > 0) {
             Attack();
-            playerController.Instance.HitStopTime(0, 5, 0.5f);
+            if (playerController.Instance.pState.alive) {
+                playerController.Instance.HitStopTime(0, 5, 0.5f);
+            }
         }
     }
 

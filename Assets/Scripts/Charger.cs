@@ -20,6 +20,14 @@ public class Charger : Enemy
         rb.gravityScale = 12f;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+        if (!playerController.Instance.pState.alive) {
+            ChangeState(EnemyStates.Charger_Idle);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D _collision)
     {
         if (_collision.gameObject.CompareTag("Enemy"))
@@ -48,6 +56,7 @@ public class Charger : Enemy
 
                 RaycastHit2D _hit = Physics2D.Raycast(transform.position + _ledgeCheckStart, _wallCheckDir, ledgeCheckX * 10);
                 if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Player")) {
+                    print("Found Player");
                     ChangeState(EnemyStates.Charger_Surprised);
                 }
 

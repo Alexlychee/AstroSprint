@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public SceneFader sceneFader;
     public static UIManager Instance; 
+    [SerializeField] GameObject deathScreen;
 
     private void Awake() {
         if(Instance != null && Instance != this) {
@@ -15,11 +17,14 @@ public class UIManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        sceneFader = GetComponentInChildren<SceneFader>();
     }
 
-    public SceneFader sceneFader;
+    public IEnumerator ActivateDeathScreen() {
+        yield return new WaitForSeconds(0.8f);
+        StartCoroutine(sceneFader.Fade(SceneFader.FadeDirection.In));
 
-    private void Start() {
-        sceneFader = GetComponentInChildren<SceneFader>();
+        yield return new WaitForSeconds(0.8f);
+        deathScreen.SetActive(true);
     }
 }
