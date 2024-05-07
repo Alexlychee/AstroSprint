@@ -21,7 +21,7 @@ public class playerController : MonoBehaviour
     private float gravity;
     [Space(5)]
 
-    [Header("wall Jump Settings")]
+    [Header("Wall Jump Settings")]
     [SerializeField] private float wallSlidingSpeed = 2f;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
@@ -163,13 +163,17 @@ public class playerController : MonoBehaviour
         if (pState.dashing) return;
         FlashWhileInvincible();
         if (pState.alive) {
-            Move();
+            if (!isWallJumping) {
+                Flip();
+                Move();
+                Jump();
+            }
+            WallSlide();
+            WallJump();
             Heal();
-            CastSpell();
-            Flip();
-            Jump();
             StartDash();
             Attack();
+            CastSpell();
         }
         if (pState.healing) return;
     }
@@ -678,5 +682,45 @@ public class playerController : MonoBehaviour
         {
             jumpBufferCounter--;
         }
+    }
+
+    private bool Walled() {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    void WallSlide() {
+        if(Walled() && !Grounded() && xAxis != 0) {
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        } else {
+            isWallSliding = false;
+        }
+    }
+
+    void WallJump() {
+        if(isWallSliding) {
+            isWallJumping = false;
+            wallJumpDirection = !pState.lookingRight ? 1 : -1;
+            CancelInvoke(nameof(StopWallJumping));
+        }
+        if(Input.GetButtonDown("Jump") && isWallSliding) {
+            isWallJumping = true;
+            rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
+           
+            dashed = false;
+            airJumpCounter = 0;
+
+            if((pState.lookingRight && transform.eulerAngles.y == 0) || (!pState.lookingRight && transform.eulerAngles.y != 0)) {
+                pState.lookingRight = !pState.lookingRight;
+                int _yRotation = pState.lookingRight ? 0 : 180;
+
+                transform.eulerAngles = new Vector2(transform.eulerAngles.x, _yRotation);
+            }
+            Invoke(nameof(StopWallJumping), wallJumpDuration);
+        }
+    }
+
+    void StopWallJumping() {
+        isWallJumping = false;
     }
 }
