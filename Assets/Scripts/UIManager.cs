@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public SceneFader sceneFader;
     public static UIManager Instance; 
+    public GameObject mapHandler;
     [SerializeField] GameObject deathScreen;
 
     private void Awake() {

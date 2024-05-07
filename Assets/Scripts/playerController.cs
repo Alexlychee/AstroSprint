@@ -96,6 +96,7 @@ public class playerController : MonoBehaviour
     Animator anim;
     private SpriteRenderer sr;
     private float xAxis, yAxis;
+    bool openMap;
     public static playerController Instance;
 
     private void Awake()
@@ -143,6 +144,7 @@ public class playerController : MonoBehaviour
         if (pState.cutscene) return;
         if (pState.alive) {
             GetInputs();
+            ToggleMap();
         }
         UpdateJumpVariables();
         RestoreTimeScale();
@@ -181,10 +183,19 @@ public class playerController : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
         attack = Input.GetButtonDown("Attack");
+        openMap = Input.GetButton("Map");
 
         if (Input.GetButton("Cast/Heal"))
         {
             castOrHealtimer += Time.deltaTime;
+        }
+    }
+
+    void ToggleMap() {
+        if (openMap) {
+            UIManager.Instance.mapHandler.SetActive(true);
+        } else {
+            UIManager.Instance.mapHandler.SetActive(false);
         }
     }
 
