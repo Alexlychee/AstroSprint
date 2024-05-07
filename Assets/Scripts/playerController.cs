@@ -21,6 +21,17 @@ public class playerController : MonoBehaviour
     private float gravity;
     [Space(5)]
 
+    [Header("wall Jump Settings")]
+    [SerializeField] private float wallSlidingSpeed = 2f;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private float wallJumpDuration;
+    [SerializeField] private Vector2 wallJumpingPower;
+    float wallJumpDirection;
+    bool isWallSliding;
+    bool isWallJumping;
+    [Space(5)]
+
     [Header("Ground Check Settings")]
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckY = 0.2f;

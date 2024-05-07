@@ -4944,8 +4944,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.309452, y: -30.950253, z: 0}
-    m_Extent: {x: 35.28525, y: 70.660355, z: 0}
+    m_Center: {x: -31.30775, y: -30.951351, z: 0}
+    m_Extent: {x: 35.292652, y: 70.66025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -12853,8 +12853,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.30615, y: -30.95135, z: 0}
-    m_Extent: {x: 35.29925, y: 70.65155, z: 0}
+    m_Center: {x: -31.30555, y: -30.948452, z: 0}
+    m_Extent: {x: 35.285248, y: 70.65465, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -21734,7 +21734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 10
-  offset: {x: 0, y: 0, z: -15}
+  offset: {x: 0, y: 0, z: -25}
 --- !u!81 &1817923563
 AudioListener:
   m_ObjectHideFlags: 0

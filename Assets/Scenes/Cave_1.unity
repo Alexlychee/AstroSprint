@@ -8449,7 +8449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 10
-  offset: {x: 0, y: 0, z: -15}
+  offset: {x: 0, y: 0, z: -25}
 --- !u!81 &1084937372
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13453,8 +13453,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.982899, y: -11.316851, z: 0}
-    m_Extent: {x: 32.8624, y: 49.91915, z: 0}
+    m_Center: {x: -27.9911, y: -11.325699, z: 0}
+    m_Extent: {x: 32.8676, y: 49.9132, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14387,8 +14387,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9772, y: -11.317101, z: 0}
-    m_Extent: {x: 32.8691, y: 49.9189, z: 0}
+    m_Center: {x: -27.987549, y: -11.318001, z: 0}
+    m_Extent: {x: 32.86015, y: 49.9152, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15172,8 +15172,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.97885, y: -11.31995, z: 0}
-    m_Extent: {x: 32.87045, y: 49.91805, z: 0}
+    m_Center: {x: -27.9902, y: -11.320299, z: 0}
+    m_Extent: {x: 32.8732, y: 49.905197, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15821,7 +15821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_Size.y
-      value: 1.8717785
+      value: 1.8666058
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_Offset.x
@@ -15829,7 +15829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_Offset.y
-      value: 0.008215904
+      value: 0.010802269
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -16204,17 +16204,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1304052521637165213, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 180.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304052521637165213, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416386752575134590, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2004367180}
+    - target: {fileID: 4842031999989295091, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842031999989295091, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6418080282796953992, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 81
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 6418080282796953992, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7340030125768299568, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_Pivot.x
