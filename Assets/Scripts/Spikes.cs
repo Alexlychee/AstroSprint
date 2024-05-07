@@ -19,7 +19,7 @@ public class Spikes : MonoBehaviour
         playerController.Instance.TakeDamage(5);
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
-        // playerController.Instance.transform.position = GameManager.Instance.platformRespawnPoint;
+        playerController.Instance.transform.position = GameManager.Instance.platformRespawnPoint;
         // StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));
         yield return new WaitForSecondsRealtime(UIManager.Instance.sceneFader.fadeTime);
         playerController.Instance.pState.cutscene = false;

@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        if(bench.interacted) {
+        if(bench) {
             respawnPoint = bench.transform.position;
         } else {
             respawnPoint = platformRespawnPoint;

@@ -121,10 +121,10 @@ public class playerController : MonoBehaviour
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = Mana;
-        // if (Health == 0) {
-        //     pState.alive = false;
-        //     GameManager.Instance.RespawnPlayer();
-        // }
+        if (Health == 0) {
+            pState.alive = false;
+            GameManager.Instance.RespawnPlayer();
+        }
         Health = maxHealth;
     }
 

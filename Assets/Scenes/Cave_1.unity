@@ -12620,7 +12620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76d42c7eb27ecb4a8458ef5b589d2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interacted: 0
+  interacted: 1
 --- !u!61 &1698881411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13458,8 +13458,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98905, y: -11.324701, z: 0}
-    m_Extent: {x: 32.87475, y: 49.913902, z: 0}
+    m_Center: {x: -27.987501, y: -11.31745, z: 0}
+    m_Extent: {x: 32.866302, y: 49.91765, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14392,8 +14392,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.987299, y: -11.320549, z: 0}
-    m_Extent: {x: 32.8673, y: 49.90895, z: 0}
+    m_Center: {x: -27.980051, y: -11.3262005, z: 0}
+    m_Extent: {x: 32.865353, y: 49.9112, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15177,8 +15177,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9876, y: -11.318399, z: 0}
-    m_Extent: {x: 32.8632, y: 49.918198, z: 0}
+    m_Center: {x: -27.980501, y: -11.317049, z: 0}
+    m_Extent: {x: 32.867302, y: 49.91635, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15787,6 +15787,10 @@ PrefabInstance:
     - target: {fileID: 2496467424662224234, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: maxHealth
@@ -16499,6 +16503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: bench
+      value: 
+      objectReference: {fileID: 1698881410}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
 --- !u!1001 &8339321342776188266
