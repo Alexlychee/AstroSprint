@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public Vector2 platformRespawnPoint;
     public Vector2 respawnPoint;
     [SerializeField] Bench bench;
+    
+    [SerializeField] private FadeUI pauseMenu;
+    [SerializeField] private float fadeTime;
+    public bool gameIsPaused;
 
     public static GameManager Instance { get; private set; }
 
@@ -24,6 +28,19 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         bench = FindAnyObjectByType<Bench>();
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused) {
+            pauseMenu.FadeUIIn(fadeTime);
+            Time.timeScale = 0;
+            gameIsPaused = true;
+        }
+    }
+
+    void UnpauseGame() {
+        Time.timeScale = 1;
+        gameIsPaused = false;
     }
 
     public void RespawnPlayer()

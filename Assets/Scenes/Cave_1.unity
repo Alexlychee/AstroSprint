@@ -13458,8 +13458,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98765, y: -11.314199, z: 0}
-    m_Extent: {x: 32.87575, y: 49.916702, z: 0}
+    m_Center: {x: -27.98275, y: -11.317049, z: 0}
+    m_Extent: {x: 32.86375, y: 49.91355, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14392,8 +14392,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.97975, y: -11.325399, z: 0}
-    m_Extent: {x: 32.86955, y: 49.910698, z: 0}
+    m_Center: {x: -27.98425, y: -11.313499, z: 0}
+    m_Extent: {x: 32.86795, y: 49.9073, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15177,8 +15177,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9836, y: -11.3134, z: 0}
-    m_Extent: {x: 32.8693, y: 49.9098, z: 0}
+    m_Center: {x: -27.98665, y: -11.31175, z: 0}
+    m_Extent: {x: 32.86155, y: 49.910553, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -16351,6 +16351,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+--- !u!114 &7340030126610707403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 415663134691053933, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+  m_PrefabInstance: {fileID: 7340030126610707402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a209068f59dc6de48a9a7cc030b44454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7659502316566741478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16467,6 +16478,14 @@ PrefabInstance:
       propertyPath: bench
       value: 
       objectReference: {fileID: 1698881410}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: fadeTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 7340030126610707403}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
 --- !u!1001 &8339321342776188266

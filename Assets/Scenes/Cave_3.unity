@@ -1019,6 +1019,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: fadeTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1202610393}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
 --- !u!1 &98097578
@@ -4944,8 +4952,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.30775, y: -30.951351, z: 0}
-    m_Extent: {x: 35.292652, y: 70.66025, z: 0}
+    m_Center: {x: -31.309202, y: -30.951002, z: 0}
+    m_Extent: {x: 35.288303, y: 70.6541, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -12853,8 +12861,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.30555, y: -30.948452, z: 0}
-    m_Extent: {x: 35.285248, y: 70.65465, z: 0}
+    m_Center: {x: -31.3041, y: -30.951, z: 0}
+    m_Extent: {x: 35.295, y: 70.661804, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14531,6 +14539,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1202610393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 415663134691053933, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+  m_PrefabInstance: {fileID: 1202610391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a209068f59dc6de48a9a7cc030b44454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1230857254
