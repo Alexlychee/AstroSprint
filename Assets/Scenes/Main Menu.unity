@@ -704,6 +704,18 @@ MonoBehaviour:
           m_StringArgument: Cave_1
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1652917143}
+        m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+        m_MethodName: SoundOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &236825226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,18 +774,6 @@ MonoBehaviour:
         - m_Target: {fileID: 1652917143}
           m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
           m_MethodName: SoundOnHover
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1652917143}
-          m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
-          m_MethodName: SoundOnClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8031,8 +8031,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.16629982, y: 0.05154991, z: 0}
-    m_Extent: {x: 20.1956, y: 20.25845, z: 0}
+    m_Center: {x: 0.15779972, y: 0.044000626, z: 0}
+    m_Extent: {x: 20.2, y: 20.2577, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

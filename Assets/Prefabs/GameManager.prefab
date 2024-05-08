@@ -45,3 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionedFromScene: 
+  platformRespawnPoint: {x: 0, y: 0}
+  respawnPoint: {x: 0, y: 0}
+  bench: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  fadeTime: 0
+  gameIsPaused: 0
