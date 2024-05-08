@@ -15,10 +15,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float damage;
     [SerializeField] protected GameObject enemyBlood;
 
+    [SerializeField] AudioClip hurtSound;
+
     protected float recoilTimer;
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
     protected Animator anim;
+    protected AudioSource audioSource;
 
     protected enum EnemyStates {
         // Crawler
@@ -55,6 +58,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void Awake() {
@@ -66,7 +70,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         if(GameManager.Instance.gameIsPaused) return;
-        
+
         if(isRecoiling) {
             if(recoilTimer < recoilLength) {
                 recoilTimer += Time.deltaTime;
@@ -82,6 +86,7 @@ public class Enemy : MonoBehaviour
     public virtual void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce) {
         health -= _damageDone;
         if(!isRecoiling) {
+            audioSource.PlayOneShot(hurtSound);
             GameObject _enemyBlood = Instantiate(enemyBlood, transform.position, Quaternion.identity);
             Destroy(_enemyBlood, 5.5f);
             rb.velocity = -_hitForce * recoilFactor * _hitDirection;

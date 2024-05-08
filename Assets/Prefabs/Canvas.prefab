@@ -1217,6 +1217,7 @@ GameObject:
   - component: {fileID: 2919172850949004997}
   - component: {fileID: 980230151450081244}
   - component: {fileID: 2923753272299540605}
+  - component: {fileID: 8980451478814629693}
   m_Layer: 5
   m_Name: Quit To Main Menu
   m_TagString: Untagged
@@ -1327,10 +1328,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5033475306340178435}
-        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
-        m_MethodName: CallFadeAndLoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 415663134691053933}
+        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
+        m_MethodName: FadeUIOut
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1339,6 +1340,47 @@ MonoBehaviour:
           m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6549355524738601438}
+        m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+        m_MethodName: SoundOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8980451478814629693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600294548049381536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6549355524738601438}
+          m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+          m_MethodName: SoundOnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1603867919610177554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2687,7 @@ GameObject:
   - component: {fileID: 4561029971904921028}
   - component: {fileID: 6158812686236209671}
   - component: {fileID: 4472231109325580068}
+  - component: {fileID: 3804435521743972808}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -2767,6 +2810,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3804435521743972808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555813496256215532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6549355524738601438}
+          m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+          m_MethodName: SoundOnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3556433104646770452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2927,7 @@ GameObject:
   - component: {fileID: 5468088322420195861}
   - component: {fileID: 5775840809881910187}
   - component: {fileID: 4026477152575768224}
+  - component: {fileID: 5293795456033969444}
   m_Layer: 5
   m_Name: Respawn Button
   m_TagString: Untagged
@@ -2965,9 +3038,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RespawnPlayer
+      - m_Target: {fileID: 415663134691053933}
+        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
+        m_MethodName: FadeUIOut
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6549355524738601438}
+        m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+        m_MethodName: SoundOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2977,6 +3062,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5293795456033969444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3868079507180594342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6549355524738601438}
+          m_TargetAssemblyTypeName: UIAudio, Assembly-CSharp
+          m_MethodName: SoundOnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3934742820371213808
 GameObject:
   m_ObjectHideFlags: 0
@@ -5618,6 +5732,7 @@ GameObject:
   - component: {fileID: 7340030125768299581}
   - component: {fileID: 7340030125768299569}
   - component: {fileID: 7076710894625636238}
+  - component: {fileID: 6549355524738601438}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5741,6 +5856,20 @@ MonoBehaviour:
   sceneFader: {fileID: 0}
   mapHandler: {fileID: 674281561233431305}
   deathScreen: {fileID: 4679684856115347287}
+--- !u!114 &6549355524738601438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340030125768299580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd63c0444b23b384fbfc1820111b2d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {fileID: 8300000, guid: 8866c066267f39845a872f53b9763ffb, type: 3}
+  click: {fileID: 8300000, guid: ff3f70b6b1c76ac4fa1e7b230890a288, type: 3}
 --- !u!1 &7340030125890546466
 GameObject:
   m_ObjectHideFlags: 0

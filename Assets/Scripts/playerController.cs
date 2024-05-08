@@ -102,12 +102,25 @@ public class playerController : MonoBehaviour
     float castOrHealtimer;
     [Space(5)]
 
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip landingSound;
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip dashAndAttackSound;
+    [SerializeField] AudioClip spellCastSound;
+    [SerializeField] AudioClip hurtSound;
+    
+
     [HideInInspector] public PlayerStateList pState;
     [HideInInspector] public Rigidbody2D rb;
     Animator anim;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
     private float xAxis, yAxis;
     bool openMap;
+
+    private bool canFlash = true;
+    private bool landingSoundPlayed;
+
     public static playerController Instance;
 
     private void Awake()
@@ -129,6 +142,8 @@ public class playerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
         Mana = mana;
@@ -153,7 +168,7 @@ public class playerController : MonoBehaviour
     void Update()
     {
         if(GameManager.Instance.gameIsPaused) return;
-        
+
         if (pState.cutscene) return;
         if (pState.alive) {
             GetInputs();
@@ -257,6 +272,7 @@ public class playerController : MonoBehaviour
         canDash = false;
         pState.dashing = true;
         anim.SetTrigger("Dashing");
+        audioSource.PlayOneShot(dashAndAttackSound);
         rb.gravityScale = 0;
         int _dir = pState.lookingRight ? 1 : -1;
         rb.velocity = new Vector2(_dir * dashSpeed, 0);
@@ -293,6 +309,7 @@ public class playerController : MonoBehaviour
         {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
+            audioSource.PlayOneShot(dashAndAttackSound);
 
             if (yAxis == 0 || yAxis < 0 && Grounded())
             {
@@ -411,6 +428,7 @@ public class playerController : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         if(pState.alive) {
+            audioSource.PlayOneShot(hurtSound);
             Health -= Mathf.RoundToInt(_damage);
             if(Health <= 0) {
                 Health = 0;
@@ -586,6 +604,7 @@ public class playerController : MonoBehaviour
 
     IEnumerator CastCoroutine()
     {
+        audioSource.PlayOneShot(spellCastSound);
         anim.SetBool("Casting", true);
         yield return new WaitForSeconds(0.15f);
 
@@ -643,12 +662,14 @@ public class playerController : MonoBehaviour
     {
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !pState.jumping)
         {
+            audioSource.PlayOneShot(jumpSound);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
             pState.jumping = true;
         }
 
         if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
         {
+            audioSource.PlayOneShot(jumpSound);
             pState.jumping = true;
             airJumpCounter++;
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
@@ -667,6 +688,10 @@ public class playerController : MonoBehaviour
     {
         if (Grounded())
         {
+            if(!landingSoundPlayed) {
+                audioSource.PlayOneShot(landingSound);
+                landingSoundPlayed = true;
+            }
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
             airJumpCounter = 0;
@@ -674,6 +699,7 @@ public class playerController : MonoBehaviour
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
+            landingSoundPlayed = false;
         }
 
         if (Input.GetButtonDown("Jump"))
