@@ -15,7 +15,7 @@ public class SceneFader : MonoBehaviour
         Out
     }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         fadeOutUIImage = GetComponent<Image>();
     }

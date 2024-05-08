@@ -4952,8 +4952,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.309202, y: -30.951002, z: 0}
-    m_Extent: {x: 35.288303, y: 70.6541, z: 0}
+    m_Center: {x: -31.306051, y: -30.9555, z: 0}
+    m_Extent: {x: 35.30015, y: 70.6631, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -12861,8 +12861,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.3041, y: -30.951, z: 0}
-    m_Extent: {x: 35.295, y: 70.661804, z: 0}
+    m_Center: {x: -31.3053, y: -30.949501, z: 0}
+    m_Extent: {x: 35.2966, y: 70.6612, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18193,6 +18193,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1510067462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4198253630223960446, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+  m_PrefabInstance: {fileID: 1624512556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1560335310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18985,12 +18990,32 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 1510067462}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: manaStorage
       value: 
       objectReference: {fileID: 1202610392}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: groundCheckX
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpingPower.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpingPower.y
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_Size.x

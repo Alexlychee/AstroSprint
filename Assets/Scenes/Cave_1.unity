@@ -13587,8 +13587,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9883, y: -11.3192005, z: 0}
-    m_Extent: {x: 32.8709, y: 49.920998, z: 0}
+    m_Center: {x: -27.9902, y: -11.32295, z: 0}
+    m_Extent: {x: 32.8638, y: 49.908752, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14521,8 +14521,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98455, y: -11.318748, z: 0}
-    m_Extent: {x: 32.86115, y: 49.91935, z: 0}
+    m_Center: {x: -27.986752, y: -11.316, z: 0}
+    m_Extent: {x: 32.86805, y: 49.916603, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15318,8 +15318,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.988699, y: -11.318199, z: 0}
-    m_Extent: {x: 32.8701, y: 49.9194, z: 0}
+    m_Center: {x: -27.99255, y: -11.3202, z: 0}
+    m_Extent: {x: 32.86955, y: 49.9057, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -16444,9 +16444,21 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2004367180}
+    - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RespawnPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -16490,6 +16502,10 @@ PrefabInstance:
     - target: {fileID: 6418080282796953992, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076710894625636238, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: sceneFader
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7340030125768299568, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_Pivot.x
@@ -16716,6 +16732,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 7340030126610707403}
+    - target: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+      propertyPath: gameIsPaused
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
 --- !u!1001 &8339321342776188266
