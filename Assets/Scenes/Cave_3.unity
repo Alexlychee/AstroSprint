@@ -5123,8 +5123,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.3102, y: -30.94425, z: 0}
-    m_Extent: {x: 35.2933, y: 70.65545, z: 0}
+    m_Center: {x: -31.30185, y: -30.9467, z: 0}
+    m_Extent: {x: 35.29425, y: 70.6597, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13032,8 +13032,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -31.305748, y: -30.95015, z: 0}
-    m_Extent: {x: 35.29535, y: 70.66455, z: 0}
+    m_Center: {x: -31.30905, y: -30.956898, z: 0}
+    m_Extent: {x: 35.29535, y: 70.661896, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14677,11 +14677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340030126667298010, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -345.8
+      value: -340.4
       objectReference: {fileID: 0}
     - target: {fileID: 7340030126667298010, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 53.9
+      value: 129.5
       objectReference: {fileID: 0}
     - target: {fileID: 7340030126686806010, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_SizeDelta.x
@@ -14693,11 +14693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340030126686806010, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -376
+      value: -370.6
       objectReference: {fileID: 0}
     - target: {fileID: 7340030126686806010, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 43.299988
+      value: 118.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
