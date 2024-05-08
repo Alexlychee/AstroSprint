@@ -12964,6 +12964,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1771375465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4198253630223960446, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+  m_PrefabInstance: {fileID: 2496467424095251974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778646820
 GameObject:
   m_ObjectHideFlags: 0
@@ -13453,8 +13458,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9911, y: -11.325699, z: 0}
-    m_Extent: {x: 32.8676, y: 49.9132, z: 0}
+    m_Center: {x: -27.98765, y: -11.314199, z: 0}
+    m_Extent: {x: 32.87575, y: 49.916702, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14387,8 +14392,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.987549, y: -11.318001, z: 0}
-    m_Extent: {x: 32.86015, y: 49.9152, z: 0}
+    m_Center: {x: -27.97975, y: -11.325399, z: 0}
+    m_Extent: {x: 32.86955, y: 49.910698, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15172,8 +15177,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.9902, y: -11.320299, z: 0}
-    m_Extent: {x: 32.8732, y: 49.905197, z: 0}
+    m_Center: {x: -27.9836, y: -11.3134, z: 0}
+    m_Extent: {x: 32.8693, y: 49.9098, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15796,6 +15801,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 1771375465}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: manaStorage
       value: 
       objectReference: {fileID: 1997854954}
@@ -15805,7 +15814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: groundCheckX
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: recoilXSteps
@@ -15814,6 +15823,22 @@ PrefabInstance:
     - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: recoilYSteps
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpingPower.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496467424662224235, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+      propertyPath: wallJumpingPower.y
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2496467424662224236, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
       propertyPath: m_Size.x
