@@ -3687,6 +3687,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &462660084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8106794033727643953, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
+  m_PrefabInstance: {fileID: 8106794034060966021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &477478985
 GameObject:
   m_ObjectHideFlags: 0
@@ -11921,6 +11926,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1584289615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7340030125768299580, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+  m_PrefabInstance: {fileID: 7340030126610707402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584289617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584289615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe297fc44be1b3a489514c790671bcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1601907025
 GameObject:
   m_ObjectHideFlags: 0
@@ -13458,8 +13480,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98275, y: -11.317049, z: 0}
-    m_Extent: {x: 32.86375, y: 49.91355, z: 0}
+    m_Center: {x: -27.9877, y: -11.3204, z: 0}
+    m_Extent: {x: 32.871, y: 49.9131, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14392,8 +14414,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98425, y: -11.313499, z: 0}
-    m_Extent: {x: 32.86795, y: 49.9073, z: 0}
+    m_Center: {x: -27.9803, y: -11.316999, z: 0}
+    m_Extent: {x: 32.8685, y: 49.907898, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14646,10 +14668,22 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8106794033727643955, guid: dbce056d7e82f304d98cdd34f5c91063, type: 3}
   m_PrefabInstance: {fileID: 8106794034060966021}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 462660084}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bca07e529c03f34eab90b5a2b7b2931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2004367181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462660084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe297fc44be1b3a489514c790671bcaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2021127660 stripped
@@ -15177,8 +15211,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -27.98665, y: -11.31175, z: 0}
-    m_Extent: {x: 32.86155, y: 49.910553, z: 0}
+    m_Center: {x: -27.992899, y: -11.3104, z: 0}
+    m_Extent: {x: 32.8668, y: 49.9114, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15336,6 +15370,23 @@ Transform:
   m_Father: {fileID: 1076786041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2141530132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2496467424662224238, guid: de0cec0256687ef4782a71206b2f3847, type: 3}
+  m_PrefabInstance: {fileID: 2496467424095251974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141530133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141530132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe297fc44be1b3a489514c790671bcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &765943391962444550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16241,10 +16292,66 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2004367180}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnpauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923753272299540605, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4026477152575768224, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2004367180}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2004367180}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnpauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472231109325580068, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4842031999989295091, guid: 0a63bc38394cea64aba968c27cd441fe, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 46.4
