@@ -10,9 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected bool isRecoiling = false;
 
     [SerializeField] protected playerController player;
-    [SerializeField] protected float speed;
+    [SerializeField] public float speed;
 
-    [SerializeField] protected float damage;
+    [SerializeField] public float damage;
     [SerializeField] protected GameObject enemyBlood;
 
     [SerializeField] AudioClip hurtSound;
@@ -37,7 +37,13 @@ public class Enemy : MonoBehaviour
         // Charger
         Charger_Idle,
         Charger_Surprised,
-        Charger_Charge
+        Charger_Charge,
+
+        // Boss
+        Boss_Stage1,
+        Boss_Stage2,
+        Boss_Stage3,
+        Boss_Stage4
     }
 
     protected EnemyStates currentEnemyState;
@@ -93,7 +99,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void OnCollisionStay2D(Collision2D _other) {
+    protected virtual void OnCollisionStay2D(Collision2D _other) {
         if(_other.gameObject.CompareTag("Player") && !playerController.Instance.pState.invincible && health > 0) {
             Attack();
             if (playerController.Instance.pState.alive) {
