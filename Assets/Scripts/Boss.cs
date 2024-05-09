@@ -131,6 +131,11 @@ public class Boss : Enemy
     [HideInInspector] public bool damagedPlayer = false;
 
     [HideInInspector] public bool parrying;
+    [HideInInspector] public Vector2 moveToPosition;
+    [HideInInspector] public bool diveAttack;
+    public GameObject divingCollider;
+    public GameObject pillar;
+
     #endregion
 
     #region Control
@@ -144,7 +149,8 @@ public class Boss : Enemy
             }
             else
             {
-                StartCoroutine(Lunge());
+                // StartCoroutine(Lunge());
+                DiveAttackJump();
             }
         }
     }
@@ -156,9 +162,53 @@ public class Boss : Enemy
         StopCoroutine(Lunge());
         StopCoroutine(Parry());
         StopCoroutine(Slash());
+
+        diveAttack = false;
     }
     #endregion
     #region Stage 1
+
+    #region Stage 2
+    void DiveAttackJump()
+    {
+        attacking = true;
+        moveToPosition = new Vector2(playerController.Instance.transform.position.x, rb.position.y + 10);
+        diveAttack = true;
+        anim.SetBool("Jump", true);
+    }
+
+    public void Dive()
+    {
+        anim.SetBool("Dive", true);
+        anim.SetBool("Jump", false);
+    }
+    private void OnTriggerEnter2D(Collider2D _other)
+    {
+        if (_other.GetComponent<playerController>() != null && diveAttack)
+        {
+            _other.GetComponent<playerController>().TakeDamage(damage * 2);
+            playerController.Instance.pState.recoilingX = true;
+        }
+    }
+
+    public void DivingPillars()
+    {
+        Vector2 _impactPoint = groundCheckPoint.position;
+        float _spawnDistance = 5;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Vector2 _pillarSpawnPointRight = _impactPoint + new Vector2(_spawnDistance, 0);
+            Vector2 _pillarSpawnPointLeft = _impactPoint - new Vector2(_spawnDistance, 0);
+            Instantiate(pillar, _pillarSpawnPointRight, Quaternion.Euler(0, 0, -90));
+            Instantiate(pillar, _pillarSpawnPointLeft, Quaternion.Euler(0, 0, -90));
+
+            _spawnDistance += 5;
+        }
+        ResetAllAttacks();
+    }
+
+    #endregion
     IEnumerator TripleSlash()
     {
         attacking = true;
@@ -245,7 +295,8 @@ public class Boss : Enemy
         if (!parrying)
         {
             base.EnemyHit(_damageDone, _hitDirection, _hitForce);
-            if(currentEnemyState != EnemyStates.Boss_Stage4) {
+            if (currentEnemyState != EnemyStates.Boss_Stage4)
+            {
                 ResetAllAttacks();
                 StartCoroutine(Parry());
             }

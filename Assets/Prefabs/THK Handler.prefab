@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 942575829808236350}
   - component: {fileID: 942575829808236344}
   - component: {fileID: 942575829808236345}
+  - component: {fileID: 536525029}
   m_Layer: 6
   m_Name: The Hollow Knight
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 942575829808236351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.86, z: 0}
-  m_LocalScale: {x: 2.65, y: 2.65, z: 2.65}
+  m_LocalScale: {x: 2.9399998, y: 2.9399998, z: 2.9399998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 942575830027928873}
@@ -102,9 +103,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -91417231
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1977985677
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
@@ -126,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 942575829808236351}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8dab04c79200ccb4a8028575761e2030, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3103c8c015f1117429dfe689130e9272, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -137,6 +138,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &536525029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942575829808236351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad222c570dd2834c98e776e79ef0da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &942575830027928877
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +162,7 @@ GameObject:
   - component: {fileID: 942575830027928878}
   - component: {fileID: 942575830027928879}
   - component: {fileID: 942575830027928876}
-  - component: {fileID: 942575830027928872}
+  - component: {fileID: 659976140}
   m_Layer: 6
   m_Name: THK Handler
   m_TagString: Enemy
@@ -175,6 +188,7 @@ Transform:
   - {fileID: 942575829602184477}
   - {fileID: 942575830742161012}
   - {fileID: 942575831232026690}
+  - {fileID: 1803700132811398690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,7 +205,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18282986, y: 0.35704088}
+  m_Offset: {x: 0.1756897, y: 0.29990387}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -202,7 +216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3656597, y: 3.1475916}
+  m_Size: {x: 1.7514038, y: 4.090439}
   m_EdgeRadius: 0
 --- !u!50 &942575830027928879
 Rigidbody2D:
@@ -221,7 +235,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 9.5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -245,7 +259,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0142822
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -321,7 +335,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &942575830027928872
+--- !u!114 &659976140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,34 +347,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b00f71139c90c4b95f86eb15ab9d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  recoilLength: 0
-  recoilFactor: 0
+  health: 10
+  recoilLength: 1
+  recoilFactor: 1
   isRecoiling: 0
   player: {fileID: 0}
-  speed: 0
-  damage: 0
-  enemyBlood: {fileID: 0}
-  hurtSound: {fileID: 0}
-  slashEffect: {fileID: 0}
-  SideAttackTransform: {fileID: 0}
-  SideAttackArea: {x: 0, y: 0}
-  UpAttackTransform: {fileID: 0}
-  UpAttackArea: {x: 0, y: 0}
-  DownAttackTransform: {fileID: 0}
-  DownAttackArea: {x: 0, y: 0}
-  attackRange: 0
-  attackTimer: 0
+  speed: 10
+  damage: 1
+  enemyBlood: {fileID: 5764699680870911079, guid: 982cf437067644e41b6e650419d729d1, type: 3}
+  hurtSound: {fileID: 8300000, guid: 23ed9245e730881429017ad3bd15eaf2, type: 3}
+  slashEffect: {fileID: 4019268867892082219, guid: cb7894a678fa74bc1be60cfea73115c3, type: 3}
+  SideAttackTransform: {fileID: 942575830596485352}
+  SideAttackArea: {x: 5.96, y: 3.88}
+  UpAttackTransform: {fileID: 942575829602184477}
+  UpAttackArea: {x: 3.08, y: 4.69}
+  DownAttackTransform: {fileID: 942575830742161012}
+  DownAttackArea: {x: 3.08, y: 4.69}
+  attackRange: 5
+  attackTimer: 5
   facingRight: 0
-  groundCheckPoint: {fileID: 0}
+  groundCheckPoint: {fileID: 942575831232026690}
   groundCheckY: 0.2
   groundCheckX: 0.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   runSpeed: 0
   attacking: 0
   attackCountdown: 0
+  damagedPlayer: 0
+  parrying: 0
+  moveToPosition: {x: 0, y: 0}
+  diveAttack: 0
+  divingCollider: {fileID: 0}
+  pillar: {fileID: 0}
 --- !u!1 &942575830497245021
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +433,7 @@ MonoBehaviour:
   m_Intensity: 1.54
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000071158dfa
+  m_ApplyToSortingLayers: 0000000073551a8a
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -467,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942575830596485353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.64, y: 0.31, z: 0}
+  m_LocalPosition: {x: 3.72, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -529,10 +549,58 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942575831232026691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -1.36, z: 0}
+  m_LocalPosition: {x: 0.17, y: -2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 942575830027928873}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2109683924454678917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803700132811398690}
+  - component: {fileID: 4916837341735778696}
+  m_Layer: 6
+  m_Name: Diving Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1803700132811398690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109683924454678917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32, y: -3.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 942575830027928873}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4916837341735778696
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109683924454678917}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.58
