@@ -20,7 +20,7 @@ public class Boss_Idle : StateMachineBehaviour
         if(Boss.Instance.attackCountdown <= 0)
         {
             Boss.Instance.AttackHandler();
-            Boss.Instance.attackCountdown = Boss.Instance.attackTimer;
+            Boss.Instance.attackCountdown = Random.Range(Boss.Instance.attackTimer - 1, Boss.Instance.attackTimer + 1);
         }
     }
     void RunToPlayer(Animator animator)

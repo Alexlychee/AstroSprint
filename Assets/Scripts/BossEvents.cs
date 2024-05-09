@@ -30,6 +30,10 @@ public class BossEvents : MonoBehaviour
     }
 
     void Parrying() {
-        Boss.Instance.parrying = true;
+        Boss.Instance.parrying = false;
+    }
+
+    void DestroyAfterDeath() {
+        Boss.Instance.DestroyAfterDeath();
     }
 }

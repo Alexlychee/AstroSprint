@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -82,6 +83,10 @@ public class Boss : Enemy
     protected override void Update()
     {
         base.Update();
+        if (health <= 0 && alive)
+        {
+            Death(0);
+        }
         if (!attacking)
         {
             attackCountdown -= Time.deltaTime;
@@ -107,15 +112,21 @@ public class Boss : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Boss_Stage1:
+                    attackTimer = 6;
+                    runSpeed = speed;
                     break;
 
                 case EnemyStates.Boss_Stage2:
+                    attackTimer = 5;
                     break;
 
                 case EnemyStates.Boss_Stage3:
+                    attackTimer = 8;
                     break;
 
                 case EnemyStates.Boss_Stage4:
+                    attackTimer = 10;
+                    runSpeed = speed / 2;
                     break;
             }
         }
@@ -149,7 +160,17 @@ public class Boss : Enemy
             }
             else
             {
-                // StartCoroutine(Lunge());
+                StartCoroutine(Lunge());
+            }
+        }
+        if (currentEnemyState == EnemyStates.Boss_Stage2)
+        {
+            if (Vector2.Distance(playerController.Instance.transform.position, rb.position) <= attackRange)
+            {
+                StartCoroutine(TripleSlash());
+            }
+            else
+            {
                 DiveAttackJump();
             }
         }
@@ -307,5 +328,30 @@ public class Boss : Enemy
             ResetAllAttacks();
             StartCoroutine(Slash());
         }
+        if (health > 20)
+        {
+            ChangeState(EnemyStates.Boss_Stage1);
+        }
+        if (health <= 15)
+        {
+            ChangeState(EnemyStates.Boss_Stage2);
+        }
+        if (health <= 0)
+        {
+            Death(0);
+        }
+    }
+
+    protected override void Death(float _destroyTime)
+    {
+        ResetAllAttacks();
+        alive = false;
+        rb.velocity = new Vector2(rb.velocity.x, -25);
+        anim.SetTrigger("Die");
+        bloodTimer = 0.8f;
+    }
+    public void DestroyAfterDeath()
+    {
+        Destroy(gameObject);
     }
 }

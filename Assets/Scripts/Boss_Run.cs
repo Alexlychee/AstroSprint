@@ -19,7 +19,7 @@ public class Boss_Run : StateMachineBehaviour
         if (Boss.Instance.attackCountdown <= 0)
         {
             Boss.Instance.AttackHandler();
-            Boss.Instance.attackCountdown = Boss.Instance.attackTimer;
+            Boss.Instance.attackCountdown = Random.Range(Boss.Instance.attackTimer - 1, Boss.Instance.attackTimer + 1);
         }
     }
     void TargetPlayerPosition(Animator animator)
@@ -29,7 +29,7 @@ public class Boss_Run : StateMachineBehaviour
             Boss.Instance.Flip();
             Vector2 _target = new Vector2(playerController.Instance.transform.position.x, rb.position.y);
             Vector2 _newPos = Vector2.MoveTowards(rb.position, _target, Boss.Instance.runSpeed * Time.fixedDeltaTime);
-            Boss.Instance.runSpeed = Boss.Instance.speed;
+
             rb.MovePosition(_newPos);
         }
         else
